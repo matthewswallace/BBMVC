@@ -1,0 +1,13 @@
+{
+  "name": "bbmvc",
+  "url": "http://bbmvc.org",
+  "license": "GPL",
+  "tags": ["flash","cpp","js","neko"],
+  "description": "BBMVC is a super light simple cross platform MVC framework. Checkout http://bbmvc.org for example code.",
+  "version": "0.0.2",
+  "releasenote": "Added a subscribe method to BBModel. This will allow you to pass a callback function to the model that will get called when variables are updated. ",
+  "contributors": ["mwallace"],
+  "dependencies": {
+
+  }
+}

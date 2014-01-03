@@ -1,7 +1,7 @@
-#-swf bin/swf/Main.swf
 -swf build/bbmvc.swc
 -main Main
 -debug
 -D fdb
 -swf-version 11.1
 -cp src
+#-swf bin/swf/Main.swf

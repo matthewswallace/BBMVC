@@ -1,0 +1,9 @@
+<project name="bbmvc" url="http://bbmvc.org" license="GPL">
+    <user name="mwallace"/>
+    <tag v="flash"/>
+    <tag v="cpp"/>
+	<tag v="js"/>
+	<tag v="neko"/>
+    <description>BBMVC is a super light simple cross platform MVC framework. Checkout http://bbmvc.org for example code.</description>
+    <version name="0.1">Initial release, everything is working correctly</version>
+</project>

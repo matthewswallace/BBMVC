@@ -3,8 +3,12 @@ package org.bbmvc.models;
 import org.bbmvc.views.IBBView;
 class BBModel implements IBBModel
 {
+
+	private var _callbacks:Array<Dynamic>;
+
 	public function new()
 	{
+		_callbacks = new Array<Dynamic>();
 	}
 
 	/**
@@ -118,6 +122,10 @@ class BBModel implements IBBModel
 		{
 			for (i in 0...views.length )
 				views[i].update( dataTypeChanged, data );
+
+			for(i in 0..._callbacks.length)
+				if(_callbacks[i] != null)
+					_callbacks[i](dataTypeChanged, data);
 		}
 	}
 
@@ -131,5 +139,10 @@ class BBModel implements IBBModel
 	public function unregisterView( view : IBBView ) : Void
 	{
 		removeView( view );
+	}
+
+	public function subscribe(callback:Dynamic)
+	{
+		_callbacks.push(callback);
 	}
 }

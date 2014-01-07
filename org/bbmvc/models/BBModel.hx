@@ -8,6 +8,7 @@ class BBModel implements IBBModel
 
 	public function new()
 	{
+		views = new Array<IBBView>();
 		_callbacks = new Array<Dynamic>();
 	}
 
@@ -82,9 +83,7 @@ class BBModel implements IBBModel
 	 *  Registers a view with the model for updating
 	 */
 	public function registerView( view : IBBView ) : Void
-	{
-		if (views == null)
-			views = new Array<IBBView>();
+	{			
 		if (hasView( view.name ))
 			throw "Error in Model::registerView - a view with that name already exists.  Cannot add view with duplicate names.";
 		else
@@ -118,14 +117,15 @@ class BBModel implements IBBModel
 	 */
 	private function update( ?dataTypeChanged : String = "", ?data : Dynamic = null ) : Void
 	{
-		if (views != null)
-		{
-			for (i in 0...views.length )
-				views[i].update( dataTypeChanged, data );
 
-			for(i in 0..._callbacks.length)
-				if(_callbacks[i] != null)
-					_callbacks[i](dataTypeChanged, data);
+		for (i in 0...views.length )
+			views[i].update( dataTypeChanged, data );
+
+		for(j in 0..._callbacks.length)
+		{
+			trace(_callbacks[j]);
+			if(_callbacks[j] != null)
+				_callbacks[j](dataTypeChanged, data);
 		}
 	}
 

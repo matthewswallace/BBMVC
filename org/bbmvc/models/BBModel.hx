@@ -123,7 +123,6 @@ class BBModel implements IBBModel
 
 		for(j in 0..._callbacks.length)
 		{
-			trace(_callbacks[j]);
 			if(_callbacks[j] != null)
 				_callbacks[j](dataTypeChanged, data);
 		}
